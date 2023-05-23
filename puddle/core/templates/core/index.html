@@ -1,6 +1,5 @@
 {% extends 'core/base.html' %}
 
-
 {% block tittle %}Welcome{% endblock tittle %}
 
 {% block content %}
@@ -10,7 +9,7 @@
         <div class="grid grid-cols-5 gap-5">
             {% for item in items %}
                 <div>
-                    <a href="#">
+                    <a href="{% url 'item:detail' item.id %}">
                         <div>
                             <img src="{{ item.image.url }}" class="rounded-t-xl">
                         </div>
