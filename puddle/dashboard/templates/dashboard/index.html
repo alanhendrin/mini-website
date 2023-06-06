@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block content %}
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+        <div class="grid-container grid-cols-3 gap-3">
+            <div class="filter-container">
+                <form method="get" class="filter-form">
+                    <select name="batch_name_id">
+                        <option value="">All Batch</option>
+                        {% for batch_name in batch_names %}
+                            {% if batch_name.id == selected_batch %}
+                                <option value="{{ batch_name.id }}" selected>{{ batch_name.name }}</option>
+                            {% else %}
+                                <option value="{{ batch_name.id }}">{{ batch_name.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Filter">
+                </form>
+            </div>
+
+            <h2 class="grid-item mb-12 text-2xl text-center">Our Students</h2>
+
+            <div class="selected-info">
+                {% if selected_batch %}
+                    <p>Selected Batch: {{ selected_batch_name }}</p>
+                {% else %}
+                    <p>Selected Batch: All Batch</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-5 gap-5">
+            {% for item in items %}
+                <div>
+                    <a href="{% url 'item:detail' item.id %}">
+                        <div>
+                            <img src="{{ item.image.url }}" class="rounded-t-xl">
+                        </div>
+
+                        <div class="p-6 bg-white rounded-b-xl">
+                            <h2 class="text-xl">{{ item.name }}</h2>
+                            <p class="text-gray-500">Age: {{ item.age }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
