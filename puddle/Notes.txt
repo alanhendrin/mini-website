@@ -1,0 +1,10 @@
+improve yg dilakukan:
+
+1. membuat web sendiri, berdasarkan cara membuat marketplace: https://youtu.be/ZxMB6Njs3ck
+2. membuat model sendiri, yg dikhususkan untuk menambahkan data siswa.
+3. core: merupakan tampilan awal dari websitenya.
+   item: merupakan tampilan dari item-itemnya, yaitu detail siswa.
+   media: berisi file gambar-gambar.
+   puddle: adalah settingan awal dari apps.
+   dashboard: adalah tampilan dari detail siswanya.
+   static: berisi file css, js
