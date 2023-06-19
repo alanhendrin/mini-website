@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 
-from .forms import NewItemForm
+from .forms import NewItemForm, EditItemForm
 from .models import Item
 
 def detail(request, pk):
@@ -32,3 +32,30 @@ def new(request):
         'form': form,
         'title': 'New Student'
     })
+
+@login_required
+# part ini digunakan untuk menambahkan data murid baru melalui site. merupakan bagian dari item/form.html & forms.py
+def edit(request, pk):
+    student = get_object_or_404(Item, pk=pk, added_by=request.user)
+    if request.method == 'POST':
+        form = EditItemForm(request.POST, request.FILES, instance=student)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('item:detail', pk=student.id)
+    else:
+        form = EditItemForm(instance=student)
+
+    return render(request, 'item/form.html', {
+        'form': form,
+        'title': 'Edit Student'
+    })
+
+
+@login_required
+def delete(request, pk):
+    student = get_object_or_404(Item, pk=pk, added_by=request.user)
+    student.delete()
+
+    return redirect('dashboard:index')

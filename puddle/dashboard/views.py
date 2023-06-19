@@ -24,4 +24,3 @@ def index(request):
         'selected_batch_name': selected_batch_name,
     }
     return render(request, 'dashboard/index.html', context)
-

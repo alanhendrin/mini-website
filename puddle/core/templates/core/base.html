@@ -8,7 +8,23 @@
         <script src="https://cdn.tailwindcss.com"></script>
 
         <title>{% block title %}{% endblock %} | Windata</title>
+
+        {# custom css link #}
         <link rel="stylesheet" href="{% static 'style.css' %}">
+
+        {# bootstrap5 link #}
+        <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+        {# boxicon link #}
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+        {# remixicon link #}
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+        {# google font link #}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
@@ -21,6 +37,7 @@
                 {% if request.user.is_authenticated %}
                     <a href="#" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
                     <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Dashboard</a>
+                    <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log out</a>
                 {% else %}
                     <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
                     <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log in</a>
@@ -28,8 +45,16 @@
             </div>
         </nav>
         <div class="px-6 py-6">
-          {% block content %}
-          {% endblock %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}
+            {% endblock %}
         </div>
 
         <footer class="py-6 px-6 flex justify-between bg-gray-800">
@@ -50,5 +75,12 @@
                 </ul>
             </div>
         </footer>
+
+        {# custom js link #}
+        <script src="{% static 'jquery-3.7.0.min.js' %}"></script>
+        <script src="{% static 'popper.js' %}"></script>
+        <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+
+        <script src="{% static 'script.js' %}"></script>
     </body>
 </html>
