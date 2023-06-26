@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce93699a-7f25-4b42-adcc-c426efc7a842" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/core/templates/core/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/dashboard/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/item/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/item/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/item/templates/item/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/item/templates/item/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/item/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/item/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/item/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/item/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/static/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/static/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puddle/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/puddle/static/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="ce93699a-7f25-4b42-adcc-c426efc7a842" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +104,7 @@
       <workItem from="1686044979233" duration="2614000" />
       <workItem from="1686544632091" duration="3550000" />
       <workItem from="1686634212206" duration="2717000" />
-      <workItem from="1687145043920" duration="17851000" />
+      <workItem from="1687145043920" duration="17937000" />
     </task>
     <servers />
   </component>
